@@ -29,10 +29,10 @@ function mapStateToProps(state) {
 }
 
 function loadData(store) {
-  console.log('load data!');
   return store.dispatch(fetchUsers());
 }
 
-export  { loadData }; // named export wrap in curly braces
-
-export default connect(mapStateToProps, { fetchUsers })(UsersList);
+export default {
+  loadData,
+  component: connect(mapStateToProps, { fetchUsers })(UsersList)
+}
