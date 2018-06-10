@@ -9,16 +9,22 @@ class UsersList extends Component {
   }
 
   renderUsers() {
+    console.log('users,', this.props.users);
     return this.props.users.map((user) => (
       <li key={user.id}>{user.name}</li>
     ));
   }
 
   render() {
+    
     return (
       <div>
-        Here's a big list of users:
-        <ul>{this.renderUsers()}</ul>
+      { this.props.users && Boolean(this.props.users.length) && Array.isArray(this.props.users) &&
+        <div>
+          Here's a big list of users:
+          <ul>{this.renderUsers()}</ul>
+        </div>
+      }
       </div>
     );
   }
