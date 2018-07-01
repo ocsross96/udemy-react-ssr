@@ -16,7 +16,6 @@ class UsersList extends Component {
   }
 
   render() {
-    
     return (
       <div>
       { this.props.users && Boolean(this.props.users.length) && Array.isArray(this.props.users) &&
