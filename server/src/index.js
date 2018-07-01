@@ -9,7 +9,8 @@ import createStore from './helpers/createStore';
 const app = express();
 
 // second argument for the proxy is specifically for the api we are pointing at 
-// will not need this normally
+// will not need this normally, this is so the oauth process uses this header to redirect to 
+// somewhere after the reauth process is successful
 app.use('/api', proxy('http://react-ssr-api.herokuapp.com', {
   proxyReqOptDecorator(opts) {
     opts.headers['x-forwarded-host'] = 'localhost:3000';
